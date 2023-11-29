@@ -1,0 +1,37 @@
+{ 	
+    "extends": [
+      "stylelint-config-standard", 
+			"stylelint-config-prettier", 
+			"stylelint-config-recess-order"
+    ],
+		"plugins": ["stylelint-scss"],
+		"overrides": [
+			{
+				"files": ["*.scss", "**/*.scss"],
+				"customSyntax": "postcss-scss"
+    	}
+		],
+    "rules": {
+		"indentation": null, 
+		"no-descending-specificity": null,
+		"function-url-quotes": "always", 
+		"string-quotes": null,
+		"unit-case": null, 
+		"color-hex-case": null,
+		"color-hex-length": "long", 
+		"rule-empty-line-before": "always",
+		"font-family-no-missing-generic-family-keyword": null,
+		"property-no-unknown": null, 
+		"no-empty-source": null,
+		"declaration-block-trailing-semicolon": null, 
+		"selector-class-pattern": null, 
+		"value-no-vendor-prefix": null, 
+		"at-rule-no-unknown": null,
+		"selector-pseudo-class-no-unknown": [
+			true,
+			{
+				"ignorePseudoClasses": ["global", "v-deep", "deep"]
+			}
+		]
+	}
+}
