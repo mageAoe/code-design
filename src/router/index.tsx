@@ -5,6 +5,8 @@ import Detail from '../pages/detail'
 import Record from '../pages/record'
 import Test from '@/pages/test'
 import Loading from '@/pages/loading'
+import Main from '@/layout/index'
+import Home from '@/view/home'
 
 // 引入方法一
 // const Home = lazy(() => import('../pages/home'));
@@ -44,13 +46,19 @@ function AsyncWrapper() {
 }
 
 const rootRouter = [
+  // {
+  //   path: '/',
+  //   element: <Navigate replace to='/home' />
+  // },
   {
     path: '/',
-    element: <Navigate replace to='/home' />
-  },
-  {
-    path: '/home',
-    element: <HomeC />
+    element: <Main />,
+    children: [
+      {
+        path: '/home',
+        element: <Home />
+      }
+    ]
   },
   {
     path: '/AsyncDetail',

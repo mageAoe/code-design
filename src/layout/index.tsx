@@ -1,0 +1,33 @@
+// 组合 menu main header footer
+import React, { useState } from 'react'
+import { Outlet } from 'react-router-dom'
+import { Breadcrumb, Layout, Menu, theme } from 'antd'
+import LogoPage from './logo/index'
+import MenuPageWidget from './menu/index'
+
+const { Header, Content, Footer, Sider } = Layout
+
+function Home() {
+  const [collapsed, setCollapsed] = useState(false)
+  const {
+    token: { colorBgContainer }
+  } = theme.useToken()
+
+  return (
+    <Layout style={{ minHeight: '100vh' }}>
+      <Sider collapsible collapsed={collapsed} onCollapse={value => setCollapsed(value)}>
+        <LogoPage />
+        <MenuPageWidget />
+      </Sider>
+      <Layout style={{ maxHeight: '100vh' }}>
+        <Header style={{ padding: 0, background: colorBgContainer }} />
+        <Content className='m-4 overflow-auto flex-1'>
+          <Outlet></Outlet>
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>CODE-DESIGN ©2023</Footer>
+      </Layout>
+    </Layout>
+  )
+}
+
+export default Home

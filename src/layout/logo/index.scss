@@ -1,0 +1,68 @@
+
+   .welcome{
+      height: 5rem;
+      background-color: black;
+    }
+
+    svg{
+        width: 100%;
+        height: 100%
+    }
+
+    .words{
+      font-size: 5vh;
+      // font-weight: bold;
+      fill:none;
+      stroke-dasharray: 90,310;
+      stroke-width: 3px;
+      animation: drawing 14s linear infinite;
+    }
+
+    .words-1{
+      text-shadow: 0 0 50px deepskyblue;
+      stroke: deepskyblue;
+      animation-delay: -2s;
+    }
+
+    .words-2{
+      text-shadow: 0 0 50px lightgreen;
+      stroke: lightgreen;
+      animation-delay: -4s;
+    }
+
+    .words-3{
+      text-shadow: 0 0 50px orange;
+      stroke: orange;
+      animation-delay: -6s;
+    }
+
+    .words-4{
+      text-shadow: 0 0 50px purple;
+      stroke: purple;
+      animation-delay: -8s;
+    }
+
+    .words-5{
+      text-shadow: 0 0 50px teal;
+      stroke: teal;
+      animation-delay: -10s;
+    }
+
+    .words-6{
+      text-shadow: 0 0 50px pink;
+      stroke: pink;
+      animation-delay: -12s;
+    }
+
+    .words-7{
+      text-shadow: 0 0 50px tomato;
+      stroke: tomato;
+      animation-delay: -14s;
+    }
+    
+    @keyframes drawing{
+
+      to{
+        stroke-dashoffset: -300;
+      }
+    }
