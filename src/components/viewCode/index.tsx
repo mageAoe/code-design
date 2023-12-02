@@ -5,7 +5,7 @@ import { Button, Tooltip } from 'antd'
 import CodeBlock from '@/components/highlight/CodeBlock'
 
 const blockStyle = {
-  maxHeight: '30rem',
+  maxHeight: '40rem',
   opacity: 1,
   overflow: 'hidden',
   transition: 'max-height 1s ease-in-out, opacity 0.5s ease-in-out' // 添加过渡效果
@@ -20,7 +20,7 @@ const hiddenStyle = {
 
 interface PorpsType {
   language: string
-  code: string
+  // code: string
   tabs: Array<tabItem>
 }
 
@@ -29,8 +29,8 @@ type tabItem = {
   code: string
 }
 
-const viewCode: React.FC<PorpsType> = ({ language, code, tabs }) => {
-  const [visible, setVisible] = useState(true)
+const viewCode: React.FC<PorpsType> = ({ language, tabs }) => {
+  const [visible, setVisible] = useState(false)
   const [tab, setTab] = useState(0)
 
   const tabSliderStyle: React.CSSProperties = {
@@ -72,8 +72,19 @@ const viewCode: React.FC<PorpsType> = ({ language, code, tabs }) => {
             ))}
           </div>
         </div>
-        <div className='b-1 border-solid border-purple' style={{ borderRadius: '0 0 10px 10px' }}>
-          <CodeBlock language={tabs[tab].language} code={tabs[tab].code} />
+        <div
+          className='b-1 border-solid border-purple flex'
+          style={{ borderRadius: '0 0 10px 10px', maxHeight: 'calc(40rem - 59px)' }}
+        >
+          {tabs.map((item, index) => (
+            <div
+              key={item.language}
+              className='flex-1'
+              style={{ display: tab === index ? 'block' : 'none' }}
+            >
+              <CodeBlock language={item.language} code={item.code} />
+            </div>
+          ))}
         </div>
       </div>
     </div>

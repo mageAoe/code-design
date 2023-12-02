@@ -1,13 +1,17 @@
 // 组合 menu main header footer
 import React, { useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import { Breadcrumb, Layout, Menu, theme } from 'antd'
 import LogoPage from './logo/index'
 import MenuPageWidget from './menu/index'
+import { CSSTransition, TransitionGroup, SwitchTransition } from 'react-transition-group'
+import './index.scss'
+import 'animate.css'
 
 const { Header, Content, Footer, Sider } = Layout
 
 function Home() {
+  const location = useLocation()
   const [collapsed, setCollapsed] = useState(false)
   const {
     token: { colorBgContainer }
@@ -21,8 +25,12 @@ function Home() {
       </Sider>
       <Layout style={{ maxHeight: '100vh' }}>
         <Header style={{ padding: 0, background: colorBgContainer }} />
-        <Content className='m-4 overflow-auto flex-1'>
-          <Outlet></Outlet>
+        <Content className='m-4 overflow-y-auto flex-1'>
+          <SwitchTransition mode='out-in'>
+            <CSSTransition key={location.key} timeout={300} classNames='fade' nodeRef={null}>
+              <Outlet />
+            </CSSTransition>
+          </SwitchTransition>
         </Content>
         <Footer style={{ textAlign: 'center' }}>CODE-DESIGN ©2023</Footer>
       </Layout>

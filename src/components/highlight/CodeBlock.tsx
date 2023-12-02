@@ -1,7 +1,8 @@
-import { Card } from 'antd'
 import React, { useRef, useState, useEffect } from 'react'
 import hljs from './index'
 import Clipboard from 'clipboard'
+
+import './index.scss'
 
 interface PorpsType {
   language: string
@@ -35,7 +36,7 @@ const CodeBlock: React.FC<PorpsType> = ({ language, code }) => {
   }, [code])
 
   return (
-    <div className='code-block' style={{ position: 'relative' }}>
+    <div className='code-block overflow-auto h-full' style={{ position: 'relative' }}>
       <pre>
         <code id={language} ref={preRef} className={language}>
           {code}

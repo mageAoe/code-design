@@ -1,0 +1,51 @@
+.transition-effect::before {
+	transform: scaleX(0);
+	transform-origin: bottom right;
+}
+
+.transition-effect:hover {
+
+	&before {
+		transform: scaleX(1);
+		transform-origin: bottom left;
+	}
+}
+
+.transition-effect{
+	position: relative;
+	font-size: 5rem;
+
+	&before {
+		position: absolute;
+
+		/* inset 其与 margin 简写属性具有相同的多值语法 */
+		inset: 0;
+		inset: 0;
+		z-index: -1;
+		display: block;
+		content: " ";
+		background: hsl(200deg 100% 80%);
+		transition: transform 0.3s ease;
+	}
+}
+
+// html {
+// 	block-size: 100%;
+// 	inline-size: 100%;
+// }
+
+// .transition-effect {
+// 	min-block-size: 100%;
+// 	min-inline-size: 100%;
+// 	margin: 0;
+// 	box-sizing: border-box;
+// 	display: grid;
+// 	place-content: center;
+// 	font-family: system-ui, sans-serif;
+// }
+
+// @media (orientation: landscape) {
+// 	.transition-effect {
+// 		grid-auto-flow: column;
+// 	}
+// }

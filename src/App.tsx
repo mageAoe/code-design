@@ -1,8 +1,7 @@
 import React, { Suspense, createContext, useMemo } from 'react'
 import { RouterProvider, HashRouter } from 'react-router-dom'
 import Loading from '@/pages/loading'
-import Router from './router'
-// import './App.css'
+// import Router from './router'
 import { ConfigProvider } from 'antd'
 // import AuthRouter from '@/router/authRouter'
 import { Routes, Route } from 'react-router-dom'
@@ -13,7 +12,7 @@ import JsPageWidget from '@/view/js/index'
 import CssPage from '@/view/css/index'
 import CardsPage from '@/view/css/cards'
 import MenuRadius from '@/view/css/menu-radius/index'
-
+import TransitionEffect from '@/view/css/transition-effect/index'
 import HtmlPage from '@/view/html/index'
 
 function App() {
@@ -32,12 +31,13 @@ function App() {
         {/* <Router /> */}
         <Routes>
           <Route path='/' element={<Main />}>
-            <Route path='home' element={<Home />}></Route>
+            <Route index element={<Home />}></Route>
             <Route path='/html' element={<HtmlPage />}></Route>
             <Route path='/js' element={<JsPageWidget />}></Route>
             <Route path='/css' element={<CssPage />}>
               <Route index element={<CardsPage />}></Route>
               <Route path='/css/menu-radius' element={<MenuRadius />}></Route>
+              <Route path='/css/transition-effect' element={<TransitionEffect />}></Route>
             </Route>
           </Route>
         </Routes>

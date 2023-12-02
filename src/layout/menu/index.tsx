@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import type { MenuProps } from 'antd'
 import { Menu } from 'antd'
+import { useNavigate } from 'react-router-dom'
+
 import {
   DesktopOutlined,
-  FileOutlined,
   PieChartOutlined,
-  TeamOutlined,
-  UserOutlined
+  BlockOutlined,
+  MacCommandOutlined
 } from '@ant-design/icons'
 
 function MenuPageWidget() {
+  const navigate = useNavigate()
+
   function getItem(
     label: React.ReactNode,
     key: React.Key,
@@ -26,19 +29,20 @@ function MenuPageWidget() {
 
   type MenuItem = Required<MenuProps>['items'][number]
 
+  const toRoute: MenuProps['onClick'] = ({ key, keyPath, domEvent }) => {
+    navigate(key)
+  }
+
   const items: MenuItem[] = [
-    getItem('HOME', '1', <PieChartOutlined />),
-    getItem('Option 2', '2', <DesktopOutlined />),
-    getItem('User', 'sub1', <UserOutlined />, [
-      getItem('Tom', '3'),
-      getItem('Bill', '4'),
-      getItem('Alex', '5')
-    ]),
-    getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
-    getItem('Files', '9', <FileOutlined />)
+    getItem('HOME', '/', <PieChartOutlined />),
+    getItem('HTML', '/html', <DesktopOutlined />),
+    getItem('CSS', '/css', <BlockOutlined />),
+    getItem('JAVASCRIPT', '/js', <MacCommandOutlined />)
   ]
 
-  return <Menu theme='dark' defaultSelectedKeys={['1']} mode='inline' items={items} />
+  return (
+    <Menu theme='dark' defaultSelectedKeys={['/']} mode='inline' items={items} onClick={toRoute} />
+  )
 }
 
 export default MenuPageWidget

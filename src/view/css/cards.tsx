@@ -15,7 +15,11 @@ const CardsPage: React.FC = () => (
         menu-radius
       </Link>
     </Card.Grid>
-    <Card.Grid style={gridStyle}>Content</Card.Grid>
+    <Card.Grid style={gridStyle}>
+      <Link className='block w-full' to='/css/transition-effect'>
+        Home CSS mouse-out transition effect
+      </Link>
+    </Card.Grid>
     <Card.Grid style={gridStyle}>Content</Card.Grid>
     <Card.Grid style={gridStyle}>Content</Card.Grid>
     <Card.Grid style={gridStyle}>Content</Card.Grid>

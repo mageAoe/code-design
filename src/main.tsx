@@ -5,6 +5,7 @@ import App from './App.tsx'
 import './index.scss'
 import 'virtual:svg-icons-register'
 import 'uno.css'
+import 'animate.css'
 import { Provider } from 'react-redux'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

@@ -29,7 +29,7 @@
     // eslint (http://eslint.cn/docs/rules)
     "indent": ["error", 2],
     // 禁止所有 tab https://eslint.org/docs/latest/rules/no-tabs#rule-details
-    "no-tabs": "error",
+    "no-tabs": "off",
     "no-undef": "error",
     // "react-refresh/only-export-components": "warn",
     "array-callback-return": "error", // 数组回调方法必要return forEach 除外
@@ -57,6 +57,7 @@
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/no-non-null-assertion": "off",
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "off"
+    "@typescript-eslint/no-unused-vars": "off",
+		"react/no-unknown-property": ["off", { "ignore": ["no"] }]
   }
 }
