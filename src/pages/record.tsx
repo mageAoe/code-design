@@ -43,10 +43,7 @@ const Record: React.FC = () => {
     config.lastY = offsetY
 
     // 监听 鼠标移动或手势移动
-    ;(parentDom.current as HTMLDivElement).addEventListener(
-      mobileStatus ? 'touchmove' : 'mousemove',
-      draw
-    )
+    ;(parentDom.current as HTMLDivElement).addEventListener(mobileStatus ? 'touchmove' : 'mousemove', draw)
   }
 
   const draw = (event: any) => {
@@ -90,14 +87,8 @@ const Record: React.FC = () => {
   useEffect(() => {
     init()
     // 创建鼠标/手势按下监听器
-    ;(parentDom.current as HTMLDivElement).addEventListener(
-      mobileStatus ? 'touchstart' : 'mousedown',
-      donwEvent
-    )
-    ;(parentDom.current as HTMLDivElement).addEventListener(
-      mobileStatus ? 'touchend' : 'mouseup',
-      cloaseDraw
-    )
+    ;(parentDom.current as HTMLDivElement).addEventListener(mobileStatus ? 'touchstart' : 'mousedown', donwEvent)
+    ;(parentDom.current as HTMLDivElement).addEventListener(mobileStatus ? 'touchend' : 'mouseup', cloaseDraw)
   }, [])
 
   return (

@@ -32,7 +32,7 @@ function Home() {
             </CSSTransition>
           </SwitchTransition>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>CODE-DESIGN ©2023</Footer>
+        {/* <Footer style={{ textAlign: 'center' }}>CODE-DESIGN ©2023</Footer> */}
       </Layout>
     </Layout>
   )

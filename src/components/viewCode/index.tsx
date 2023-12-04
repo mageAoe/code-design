@@ -47,12 +47,7 @@ const viewCode: React.FC<PorpsType> = ({ language, tabs }) => {
     <div>
       <div className='p-4 flex justify-center'>
         <Tooltip title='查看代码'>
-          <Button
-            type='primary'
-            shape='circle'
-            icon={<CodepenCircleOutlined />}
-            onClick={() => setVisible(!visible)}
-          />
+          <Button type='primary' shape='circle' icon={<CodepenCircleOutlined />} onClick={() => setVisible(!visible)} />
         </Tooltip>
       </div>
       <div className='flex justify-center flex-col' style={visible ? blockStyle : hiddenStyle}>
@@ -63,12 +58,7 @@ const viewCode: React.FC<PorpsType> = ({ language, tabs }) => {
           <div className='flex justify-center relative'>
             <p style={tabSliderStyle}></p>
             {tabs.map((item, index) => (
-              <Tab
-                key={item.language}
-                item={item.language}
-                index={index}
-                changeTab={index => setTab(index)}
-              />
+              <Tab key={item.language} item={item.language} index={index} changeTab={index => setTab(index)} />
             ))}
           </div>
         </div>
@@ -77,11 +67,7 @@ const viewCode: React.FC<PorpsType> = ({ language, tabs }) => {
           style={{ borderRadius: '0 0 10px 10px', maxHeight: 'calc(40rem - 59px)' }}
         >
           {tabs.map((item, index) => (
-            <div
-              key={item.language}
-              className='flex-1'
-              style={{ display: tab === index ? 'block' : 'none' }}
-            >
+            <div key={item.language} className='flex-1' style={{ display: tab === index ? 'block' : 'none' }}>
               <CodeBlock language={item.language} code={item.code} />
             </div>
           ))}
@@ -100,10 +86,7 @@ interface TabProps {
 }
 
 const Tab: React.FC<TabProps> = ({ item, index, changeTab }) => (
-  <div
-    onClick={() => changeTab(index)}
-    className='pt-7 pl-5 pr-5 pb-2 w-32 text-center font-bold cursor-pointer'
-  >
+  <div onClick={() => changeTab(index)} className='pt-7 pl-5 pr-5 pb-2 w-32 text-center font-bold cursor-pointer'>
     <div>{item}</div>
   </div>
 )

@@ -25,6 +25,11 @@
     "react",
     "prettier"
   ],
+	"settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
     // eslint (http://eslint.cn/docs/rules)
     "indent": ["error", 2],
@@ -48,6 +53,7 @@
     "no-eval": "error",
     "no-redeclare": "error", // 禁止变量重新声明
     "no-var": "error", // 禁止var
+		"no-useless-escape": "error",
 
     "react/react-in-jsx-scope": "off",
     // "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }] //should add ".ts" if typescript project

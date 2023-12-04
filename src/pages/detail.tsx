@@ -127,14 +127,10 @@ const Detail: React.FC = () => {
       AC.Y = pointC.Y - pointA.Y // 分别求出AB,AC的向量坐标表示
 
       const direct = AB.X * AC.Y - AB.Y * AC.X // AB与AC叉乘求出逆时针还是顺时针旋转
-      const lengthAB = Math.sqrt(
-          Math.pow(pointA.X - pointB.X, 2) + Math.pow(pointA.Y - pointB.Y, 2)
-        ),
+      const lengthAB = Math.sqrt(Math.pow(pointA.X - pointB.X, 2) + Math.pow(pointA.Y - pointB.Y, 2)),
         lengthAC = Math.sqrt(Math.pow(pointA.X - pointC.X, 2) + Math.pow(pointA.Y - pointC.Y, 2)),
         lengthBC = Math.sqrt(Math.pow(pointB.X - pointC.X, 2) + Math.pow(pointB.Y - pointC.Y, 2))
-      const cosA =
-        (Math.pow(lengthAB, 2) + Math.pow(lengthAC, 2) - Math.pow(lengthBC, 2)) /
-        (2 * lengthAB * lengthAC) //   余弦定理求出旋转角
+      const cosA = (Math.pow(lengthAB, 2) + Math.pow(lengthAC, 2) - Math.pow(lengthBC, 2)) / (2 * lengthAB * lengthAC) //   余弦定理求出旋转角
       const angleA = Math.round((Math.acos(cosA) * 180) / Math.PI)
 
       if (direct < 0) {
@@ -263,12 +259,7 @@ const Detail: React.FC = () => {
                 <ExpandAltOutlined style={{ fontSize: 30 }} />
               </div>
             )}
-            <img
-              src='src/assets/image/2.jpg'
-              alt='Description'
-              className={styles.img}
-              ref={imgDom}
-            />
+            <img src='src/assets/image/2.jpg' alt='Description' className={styles.img} ref={imgDom} />
           </div>
         </div>
         detail

@@ -77,7 +77,7 @@ function TransitionEffect() {
       >
         {/* 效果展示 */}
         <div className='flex justify-center'>
-          <h1 id='transition-effect'>Hover Me Hello</h1>
+          <h1 className='transition-effect'>Hover Me Hello</h1>
         </div>
       </Card>
 

@@ -13,11 +13,7 @@ function SvgIcons(props: Props) {
 
   return (
     <>
-      <svg
-        aria-hidden='true'
-        className='svg-icon'
-        style={{ width: props.size, height: props.size }}
-      >
+      <svg aria-hidden='true' className='svg-icon' style={{ width: props.size, height: props.size }}>
         <use xlinkHref={symbolId} fill={props.color} />
       </svg>
     </>

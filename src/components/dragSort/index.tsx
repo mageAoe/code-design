@@ -30,8 +30,7 @@ const showList = [
   {
     id: 3,
     name: '机甲大师s1',
-    image:
-      'https://img2.baidu.com/it/u=2124229159,1459379647&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500'
+    image: 'https://img2.baidu.com/it/u=2124229159,1459379647&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500'
   },
   {
     id: 0,
