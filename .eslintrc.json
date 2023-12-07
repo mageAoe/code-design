@@ -6,12 +6,11 @@
   },
   "root": true,
   /* 继承某些已有的规则 */
-  "extends": [
+  "extends": [ // "plugin:prettier/recommended"
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "prettier",
-    "plugin:prettier/recommended"
+    "prettier"
   ],
   /* 指定如何解析语法 */
   "parser": "@typescript-eslint/parser",
@@ -54,11 +53,12 @@
     "no-redeclare": "error", // 禁止变量重新声明
     "no-var": "error", // 禁止var
 		"no-useless-escape": "error",
+		"prettier/prettier": ["error", {"endOfLine": "auto"}],
 
     "react/react-in-jsx-scope": "off",
     // "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }] //should add ".ts" if typescript project
 
-    "prettier/prettier": "error", // 对于不符合prettier报eslint错误
+    // "prettier/prettier": "error", // 对于不符合prettier报eslint错误
     // typeScript (https://typescript-eslint.io/rules)
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/no-non-null-assertion": "off",

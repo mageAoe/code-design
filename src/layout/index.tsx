@@ -24,7 +24,7 @@ function Home() {
         <MenuPageWidget />
       </Sider>
       <Layout style={{ maxHeight: '100vh' }}>
-        <Header style={{ padding: 0, background: colorBgContainer }} />
+        {/* <Header style={{ padding: 0, background: colorBgContainer }} /> */}
         <Content className='m-4 overflow-y-auto flex-1'>
           <SwitchTransition mode='out-in'>
             <CSSTransition key={location.key} timeout={300} classNames='fade' nodeRef={null}>

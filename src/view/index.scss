@@ -1,8 +1,40 @@
 .monaco {
+	display: flex;
   width: 100%;
+	height: 100%;
 
-  .container {
-    height: 40vh;
-		border: 1px solid teal;
+  .editor {
+		width: 100%;
+		height: 98%;
   }
+
+	.ant-tabs-nav{
+		margin: 0;
+	}
+}
+
+.right-panel{
+  display: flex;
+  flex: auto;
+	flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 1rem;
+  word-break: break-all;
+  border-radius: 0.5rem;
+
+.resize-handle{
+  display: flex;
+  flex: 0 0 1.75rem;
+  align-items: stretch;
+  justify-content: stretch;
+	font-size: 20px;
+  touch-action: none;
+	cursor: ew-resize;
+  user-select: none;
+  outline: none;
+
+	--background-color: transparent;
+}
 }

@@ -2,7 +2,7 @@ import React, { Suspense, createContext, useMemo } from 'react'
 import { RouterProvider, HashRouter } from 'react-router-dom'
 import Loading from '@/pages/loading'
 // import Router from './router'
-import { ConfigProvider } from 'antd'
+import { ConfigProvider, theme } from 'antd'
 // import AuthRouter from '@/router/authRouter'
 import { Routes, Route } from 'react-router-dom'
 import Main from '@/layout/index'
@@ -23,6 +23,7 @@ function App() {
     <HashRouter>
       <ConfigProvider
         theme={{
+          algorithm: theme.darkAlgorithm,
           token: {
             colorPrimary: '#00b96b'
           }
