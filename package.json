@@ -88,7 +88,7 @@
       "prettier --write"
     ],
     "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
-      "prettier --write--parser json"
+      "prettier --write --parser cjs"
     ],
     "package.json": [
       "prettier --write"

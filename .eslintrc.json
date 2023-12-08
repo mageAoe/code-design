@@ -9,11 +9,11 @@
 		"plugin:prettier/recommended"  
 		"plugin:prettier/recommended" 包含 "prettier" 跟 "eslint-config-prettier"
 	*/
-  "extends": [ 
-    "eslint:recommended",
+  "extends": [
+    "eslint:recommended", //继承Eslint中推荐的（打钩的）规则项http://eslint.cn/docs/rules/
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-		"plugin:prettier/recommended"
+    "plugin:prettier/recommended"
   ],
   /* 指定如何解析语法 */
   "parser": "@typescript-eslint/parser",
@@ -22,12 +22,8 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "@typescript-eslint",
-    "react",
-    "prettier"
-  ],
-	"settings": {
+  "plugins": ["@typescript-eslint", "react", "prettier"],
+  "settings": {
     "react": {
       "version": "detect"
     }
@@ -41,11 +37,7 @@
     // "react-refresh/only-export-components": "warn",
     "array-callback-return": "error", // 数组回调方法必要return forEach 除外
     "camelcase": ["error", { "ignoreImports": true }], // 使用驼峰
-    "arrow-body-style": [
-      "error",
-      "as-needed",
-      { "requireReturnForObjectLiteral": true }
-    ], // 箭头函数体周围需要大括号
+    "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }], // 箭头函数体周围需要大括号
     "block-scoped-var": "error",
     "eqeqeq": ["error", "always"], // 需要使用===和!==
     "max-lines": ["error", { "max": 400, "skipBlankLines": true }], // 强制每个文件的最大行数
@@ -55,14 +47,16 @@
     "no-eval": "error",
     "no-redeclare": "error", // 禁止变量重新声明
     "no-var": "error", // 禁止var
-		// "no-useless-escape": "error",
-		
-		// "prettier/prettier": ["error", {
-		// 	"endOfLine": "auto",
-		// 	"singleQuote": true,
+    "no-extra-semi": 2, //禁止多余的冒号
+    "no-multi-spaces": 1, //不能用多余的空格
+    "no-useless-escape": "error",
+
+    // "prettier/prettier": ["error", {
+    // 	"endOfLine": "auto",
+    // 	"singleQuote": true,
     //   "parser": "flow"
-		// 	}
-		// ],
+    // 	}
+    // ],
 
     "react/react-in-jsx-scope": "off",
     // "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }] //should add ".ts" if typescript project
@@ -73,6 +67,6 @@
     "@typescript-eslint/no-non-null-assertion": "off",
     "no-unused-vars": "off", // 禁用与 Prettier 冲突的规则
     "@typescript-eslint/no-unused-vars": "off",
-		"react/no-unknown-property": ["off", { "ignore": ["no"] }]
+    "react/no-unknown-property": ["off", { "ignore": ["no"] }]
   }
 }

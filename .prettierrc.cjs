@@ -1,4 +1,4 @@
-{
+module.exports = {
    "endOfLine": "auto",
    "printWidth": 120,
    "tabWidth": 2,
@@ -9,8 +9,8 @@
    "jsxSingleQuote": true,             
    "trailingComma": "none",            
    "bracketSpacing": true,             
-   "jsxBracketSameLine": true,         
-   "arrowParens": "avoid",             
+   "jsxBracketSameLine": true,
+   "arrowParens": "always",             
    "vueIndentScriptAndStyle": false,   
    "embeddedLanguageFormatting": "off"
 }
