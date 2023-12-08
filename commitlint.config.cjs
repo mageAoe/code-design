@@ -17,6 +17,10 @@ module.exports = {
       ['build', 'chore', 'ci', 'docs', 'feat', 'fix', 'perf', 'refactor', 'revert', 'style', 'test']
     ]
   },
+  types: [
+    { value: 'Features', name: 'Features ✨:  A new feature' },
+    { value: 'fix', name: 'fix:  修复bug' }
+  ],
   prompt: {
     questions: {
       type: {
@@ -113,3 +117,7 @@ module.exports = {
     }
   }
 }
+
+// "path": "node_modules/git-cz"
+
+// "path": "node_modules/cz-customizable"
