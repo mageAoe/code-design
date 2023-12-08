@@ -5,12 +5,14 @@
     "node": true
   },
   "root": true,
-  /* 继承某些已有的规则 */
-  "extends": [ // "plugin:prettier/recommended"
+  /* 继承某些已有的规则 
+		"plugin:prettier/recommended"  
+		"plugin:prettier/recommended" 包含 "prettier" 跟 "eslint-config-prettier"
+	*/
+  "extends": [ 
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "prettier",
 		"plugin:prettier/recommended"
   ],
   /* 指定如何解析语法 */
@@ -53,13 +55,14 @@
     "no-eval": "error",
     "no-redeclare": "error", // 禁止变量重新声明
     "no-var": "error", // 禁止var
-		"no-useless-escape": "error",
-		"prettier/prettier": ["error", {
-			"endOfLine": "auto"
-			// "singleQuote": true,
-      // "parser": "flow"
-			}
-		],
+		// "no-useless-escape": "error",
+		
+		// "prettier/prettier": ["error", {
+		// 	"endOfLine": "auto",
+		// 	"singleQuote": true,
+    //   "parser": "flow"
+		// 	}
+		// ],
 
     "react/react-in-jsx-scope": "off",
     // "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }] //should add ".ts" if typescript project
@@ -68,7 +71,7 @@
     // typeScript (https://typescript-eslint.io/rules)
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/no-non-null-assertion": "off",
-    "no-unused-vars": "off",
+    "no-unused-vars": "off", // 禁用与 Prettier 冲突的规则
     "@typescript-eslint/no-unused-vars": "off",
 		"react/no-unknown-property": ["off", { "ignore": ["no"] }]
   }
