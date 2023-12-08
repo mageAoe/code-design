@@ -55,6 +55,7 @@ export default defineConfig(config => {
       }
     },
     server: {
+      port: 5173,
       host: true,
       open: true,
       hmr: true

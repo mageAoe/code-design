@@ -27,7 +27,8 @@ function MenuPageWidget() {
     getItem('HOME', '/', <PieChartOutlined />),
     getItem('HTML', '/html', <DesktopOutlined />),
     getItem('CSS', '/css', <BlockOutlined />),
-    getItem('JAVASCRIPT', '/js', <MacCommandOutlined />)
+    getItem('JAVASCRIPT', '/js', <MacCommandOutlined />),
+    getItem('COMPONENTS', '/components', <MacCommandOutlined />)
   ]
 
   return <Menu theme='dark' defaultSelectedKeys={['/']} mode='inline' items={items} onClick={toRoute} />

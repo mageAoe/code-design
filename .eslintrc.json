@@ -53,7 +53,12 @@
     "no-redeclare": "error", // 禁止变量重新声明
     "no-var": "error", // 禁止var
 		"no-useless-escape": "error",
-		"prettier/prettier": ["error", {"endOfLine": "auto"}],
+		"prettier/prettier": ["error", {
+			"endOfLine": "auto"
+			// "singleQuote": true,
+      // "parser": "flow"
+			}
+		],
 
     "react/react-in-jsx-scope": "off",
     // "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }] //should add ".ts" if typescript project

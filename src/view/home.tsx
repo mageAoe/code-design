@@ -1,11 +1,12 @@
 import { useRef, useEffect, useState } from 'react'
 import * as monaco from 'monaco-editor'
 import type { editor } from 'monaco-editor'
-import './index.scss'
+// import './index.scss'
 import MonacoEditor from 'react-monaco-editor'
 import type { ChangeHandler } from 'react-monaco-editor'
 import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels'
 import { DragOutlined } from '@ant-design/icons'
+import CodePen from '@/components/codepen'
 
 function Home() {
   const iframeDomRef = useRef<HTMLIFrameElement>(null)
@@ -186,14 +187,14 @@ function Home() {
 		})`
   }
 
-  useEffect(() => {
-    initIframeDoc()
-    try {
-      initEditor()
-    } catch (error) {
-      //
-    }
-  }, [htmlCode, cssCode, javascriptCode])
+  // useEffect(() => {
+  //   initIframeDoc()
+  //   try {
+  //     initEditor()
+  //   } catch (error) {
+  //     //
+  //   }
+  // }, [htmlCode, cssCode, javascriptCode])
 
   const debounce = (func: ChangeHandler, delay: number) => {
     let timeoutId: any
@@ -239,73 +240,7 @@ function Home() {
     setJavascriptCode(newValue)
   }, 2000)
 
-  return (
-    <div className='flex flex-col h-full overflow-hidden position-relative'>
-      <div className='monaco'>
-        <PanelGroup direction='vertical'>
-          <Panel>
-            <PanelGroup direction='horizontal'>
-              <Panel className='right-panel' defaultSizePercentage={30} minSizePercentage={20}>
-                <span style={{ color: 'wheat', fontWeight: '700' }}>HTML</span>
-                {/* <div className='editor' ref={containerHtmlRef}></div> */}
-                <MonacoEditor
-                  className='editor'
-                  language='html'
-                  theme='vs-dark'
-                  value={htmlCode}
-                  options={optionsHtml}
-                  onChange={onHtmlChange}
-                />
-              </Panel>
-              <PanelResizeHandle className='resize-handle'>
-                <DragOutlined />
-              </PanelResizeHandle>
-              <Panel className='right-panel' minSizePercentage={30}>
-                <span style={{ color: 'wheat', fontWeight: '700' }}>CSS</span>
-                {/* <div className='editor' ref={containerCssRef}></div> */}
-                <MonacoEditor
-                  className='editor'
-                  language='css'
-                  theme='vs-dark'
-                  value={cssCode}
-                  options={optionsCSS}
-                  onChange={onCssChange}
-                />
-              </Panel>
-              <PanelResizeHandle className='resize-handle'>
-                <DragOutlined />
-              </PanelResizeHandle>
-              <Panel className='right-panel' defaultSizePercentage={30} minSizePercentage={20}>
-                <span style={{ color: 'wheat', fontWeight: '700' }}>JAVASCRIPT</span>
-                {/* <div className='editor' ref={containerJsRef}></div> */}
-                <MonacoEditor
-                  className='editor'
-                  language='javascript'
-                  theme='vs-dark'
-                  value={javascriptCode}
-                  options={optionsJavascript}
-                  onChange={onJavascriptChange}
-                />
-              </Panel>
-            </PanelGroup>
-          </Panel>
-          <PanelResizeHandle className='resize-handle justify-center'>
-            <DragOutlined />
-          </PanelResizeHandle>
-          <Panel className='right-panel'>
-            <iframe
-              ref={iframeDomRef}
-              width='100%'
-              height='100%'
-              title='Example Iframe'
-              className='b-none flex-1 z-1'
-              src='http://127.0.0.1:5500/public/preview.html'
-            ></iframe>
-          </Panel>
-        </PanelGroup>
-      </div>
-    </div>
-  )
+  return <CodePen htmlCode={htmlCode} cssCode={cssCode} javascriptCode={javascriptCode} />
 }
 
 export default Home

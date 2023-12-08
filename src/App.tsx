@@ -1,4 +1,4 @@
-import React, { Suspense, createContext, useMemo } from 'react'
+import React, { Suspense, createContext, useMemo, lazy } from 'react'
 import { RouterProvider, HashRouter } from 'react-router-dom'
 import Loading from '@/pages/loading'
 // import Router from './router'
@@ -6,7 +6,7 @@ import { ConfigProvider, theme } from 'antd'
 // import AuthRouter from '@/router/authRouter'
 import { Routes, Route } from 'react-router-dom'
 import Main from '@/layout/index'
-import Home from '@/view/home'
+const Home = lazy(() => import('@/view/home'))
 import JsPageWidget from '@/view/js/index'
 
 import CssPage from '@/view/css/index'
@@ -14,6 +14,8 @@ import CardsPage from '@/view/css/cards'
 import MenuRadius from '@/view/css/menu-radius/index'
 import TransitionEffect from '@/view/css/transition-effect/index'
 import HtmlPage from '@/view/html/index'
+
+const Components = lazy(() => import('@/view/components'))
 
 function App() {
   return (
@@ -29,19 +31,21 @@ function App() {
           }
         }}
       >
-        {/* <Router /> */}
-        <Routes>
-          <Route path='/' element={<Main />}>
-            <Route index element={<Home />}></Route>
-            <Route path='/html' element={<HtmlPage />}></Route>
-            <Route path='/js' element={<JsPageWidget />}></Route>
-            <Route path='/css' element={<CssPage />}>
-              <Route index element={<CardsPage />}></Route>
-              <Route path='/css/menu-radius' element={<MenuRadius />}></Route>
-              <Route path='/css/transition-effect' element={<TransitionEffect />}></Route>
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route path='/' element={<Main />}>
+              <Route index element={<Home />}></Route>
+              <Route path='/html' element={<HtmlPage />}></Route>
+              <Route path='/js' element={<JsPageWidget />}></Route>
+              <Route path='/css' element={<CssPage />}>
+                <Route index element={<CardsPage />}></Route>
+                <Route path='/css/menu-radius' element={<MenuRadius />}></Route>
+                <Route path='/css/transition-effect' element={<TransitionEffect />}></Route>
+              </Route>
+              <Route path='/components' element={<Components />}></Route>
             </Route>
-          </Route>
-        </Routes>
+          </Routes>
+        </Suspense>
       </ConfigProvider>
     </HashRouter>
   )
