@@ -33,7 +33,7 @@ function PrimeCalculator() {
         <input
           type='number'
           value={selectedNum}
-          onChange={event => {
+          onChange={(event) => {
             // 为了防止电脑烧起来，我们限制一下传入的值最大为 100k
             const num = Math.min(100_000, Number(event.target.value))
 

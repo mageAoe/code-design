@@ -18,12 +18,12 @@ function TreeNode(props: Props) {
     item.checked = !item.checked
     let checkedKeysCopy = [...checkedKeys]
     if (item.checked) return setCheckedKeys(checkedKeys.concat(item.id))
-    checkedKeysCopy = checkedKeysCopy.filter(key => item.id !== key)
+    checkedKeysCopy = checkedKeysCopy.filter((key) => item.id !== key)
     setCheckedKeys([...checkedKeysCopy])
   }
   return (
     <>
-      {data.map(item => (
+      {data.map((item) => (
         <ul key={item.id} className={`${style.treeUl} ml-5`}>
           <li>
             <span className='mr-1'>

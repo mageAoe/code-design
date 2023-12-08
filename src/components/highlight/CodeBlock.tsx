@@ -47,8 +47,7 @@ const CodeBlock: React.FC<PorpsType> = ({ language, code }) => {
         style={{ position: 'absolute', top: 4, right: 4, lineHeight: '14px' }}
         className='code-block__button'
         data-clipboard-target={`#${language}`}
-        disabled={!preRef.current}
-      >
+        disabled={!preRef.current}>
         {copied ? '已复制' : '复制'}
       </button>
     </div>

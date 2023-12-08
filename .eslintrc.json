@@ -34,7 +34,6 @@
     // 禁止所有 tab https://eslint.org/docs/latest/rules/no-tabs#rule-details
     "no-tabs": "off",
     "no-undef": "error",
-    // "react-refresh/only-export-components": "warn",
     "array-callback-return": "error", // 数组回调方法必要return forEach 除外
     "camelcase": ["error", { "ignoreImports": true }], // 使用驼峰
     "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }], // 箭头函数体周围需要大括号
@@ -51,17 +50,18 @@
     "no-multi-spaces": 1, //不能用多余的空格
     "no-useless-escape": "error",
 
-    // "prettier/prettier": ["error", {
-    // 	"endOfLine": "auto",
-    // 	"singleQuote": true,
-    //   "parser": "flow"
-    // 	}
-    // ],
+    "prettier/prettier": [
+      "error",
+      {
+        "arrowParens": "always",
+        "endOfLine": "auto"
+      }
+    ],
 
     "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
     // "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }] //should add ".ts" if typescript project
 
-    // "prettier/prettier": "error", // 对于不符合prettier报eslint错误
     // typeScript (https://typescript-eslint.io/rules)
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/no-non-null-assertion": "off",

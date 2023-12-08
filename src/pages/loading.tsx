@@ -17,7 +17,7 @@ function Loading() {
   // type Item = ListType[number];
 
   return (
-    <div>
+    <div className='h-full w-full flex justify-center items-center'>
       Loading...
       <Space size='middle'>
         <Spin size='large' />

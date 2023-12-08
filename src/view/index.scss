@@ -1,22 +1,22 @@
 .monaco {
-	display: flex;
+  display: flex;
   width: 100%;
-	height: 100%;
+  height: 100%;
 
   .editor {
-		width: 100%;
-		height: 98%;
+    width: 100%;
+    height: 98%;
   }
 
-	.ant-tabs-nav{
-		margin: 0;
-	}
+  .ant-tabs-nav {
+    margin: 0;
+  }
 }
 
-.right-panel{
+.right-panel {
   display: flex;
   flex: auto;
-	flex-direction: column;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -24,17 +24,17 @@
   word-break: break-all;
   border-radius: 0.5rem;
 
-.resize-handle{
-  display: flex;
-  flex: 0 0 1.75rem;
-  align-items: stretch;
-  justify-content: stretch;
-	font-size: 20px;
-  touch-action: none;
-	cursor: ew-resize;
-  user-select: none;
-  outline: none;
+  .resize-handle {
+    display: flex;
+    flex: 0 0 1.75rem;
+    align-items: stretch;
+    justify-content: stretch;
+    font-size: 20px;
+    touch-action: none;
+    cursor: ew-resize;
+    user-select: none;
+    outline: none;
 
-	--background-color: transparent;
-}
+    --background-color: transparent;
+  }
 }

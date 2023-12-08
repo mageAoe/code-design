@@ -161,15 +161,15 @@ function CodePen(props: PorpsType) {
   //   // editor.current!.getModel().updateOptions({ tabSize: 8 })
   // }
 
-  const onHtmlChange: ChangeHandler = debounce(newValue => {
+  const onHtmlChange: ChangeHandler = debounce((newValue) => {
     setHtmlCode(newValue)
   }, 3000)
 
-  const onCssChange: ChangeHandler = debounce(newValue => {
+  const onCssChange: ChangeHandler = debounce((newValue) => {
     setCssCode(newValue)
   }, 2000)
 
-  const onJavascriptChange: ChangeHandler = debounce(newValue => {
+  const onJavascriptChange: ChangeHandler = debounce((newValue) => {
     setJavascriptCode(newValue)
   }, 2000)
 
@@ -233,8 +233,7 @@ function CodePen(props: PorpsType) {
               height='100%'
               scrolling='auto'
               title='Example Iframe'
-              className='b-none flex-1 z-1 bg-white'
-            ></iframe>
+              className='b-none flex-1 z-1 bg-white'></iframe>
           </Panel>
         </PanelGroup>
       </div>

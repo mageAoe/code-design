@@ -53,19 +53,17 @@ const viewCode: React.FC<PorpsType> = ({ language, tabs }) => {
       <div className='flex justify-center flex-col' style={visible ? blockStyle : hiddenStyle}>
         <div
           className='flex justify-center w-full b-1 border-solid border-purple'
-          style={{ borderRadius: '10px 10px 0 0' }}
-        >
+          style={{ borderRadius: '10px 10px 0 0' }}>
           <div className='flex justify-center relative'>
             <p style={tabSliderStyle}></p>
             {tabs.map((item, index) => (
-              <Tab key={item.language} item={item.language} index={index} changeTab={index => setTab(index)} />
+              <Tab key={item.language} item={item.language} index={index} changeTab={(index) => setTab(index)} />
             ))}
           </div>
         </div>
         <div
           className='b-1 border-solid border-purple flex'
-          style={{ borderRadius: '0 0 10px 10px', maxHeight: 'calc(40rem - 59px)' }}
-        >
+          style={{ borderRadius: '0 0 10px 10px', maxHeight: 'calc(40rem - 59px)' }}>
           {tabs.map((item, index) => (
             <div key={item.language} className='flex-1' style={{ display: tab === index ? 'block' : 'none' }}>
               <CodeBlock language={item.language} code={item.code} />

@@ -29,8 +29,7 @@ function App() {
           token: {
             colorPrimary: '#00b96b'
           }
-        }}
-      >
+        }}>
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route path='/' element={<Main />}>

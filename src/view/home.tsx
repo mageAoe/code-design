@@ -228,15 +228,15 @@ function Home() {
     // editor.current!.getModel().updateOptions({ tabSize: 8 })
   }
 
-  const onHtmlChange: ChangeHandler = debounce(newValue => {
+  const onHtmlChange: ChangeHandler = debounce((newValue) => {
     setHtmlCode(newValue)
   }, 5000)
 
-  const onCssChange: ChangeHandler = debounce(newValue => {
+  const onCssChange: ChangeHandler = debounce((newValue) => {
     setCssCode(newValue)
   }, 2000)
 
-  const onJavascriptChange: ChangeHandler = debounce(newValue => {
+  const onJavascriptChange: ChangeHandler = debounce((newValue) => {
     setJavascriptCode(newValue)
   }, 2000)
 

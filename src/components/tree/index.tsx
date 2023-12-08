@@ -106,7 +106,7 @@ function Tree() {
   ])
 
   const findChildrenEle = (listData: TreeData[], item: TreeData): TreeData[] => {
-    const mapList = listData.map(child => {
+    const mapList = listData.map((child) => {
       if (child.id === item.id) {
         child.collapsed = !child.collapsed
       }

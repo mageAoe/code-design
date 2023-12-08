@@ -31,7 +31,7 @@ function App() {
           id={`${id}-name`}
           type='text'
           value={name}
-          onChange={event => {
+          onChange={(event) => {
             setName(event.target.value)
           }}
         />
@@ -43,7 +43,7 @@ function App() {
           max={5}
           step={0.01}
           value={boxWidth}
-          onChange={event => {
+          onChange={(event) => {
             setBoxWidth(Number(event.target.value))
           }}
         />

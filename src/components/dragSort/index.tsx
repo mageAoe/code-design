@@ -57,8 +57,7 @@ function App() {
       <div
         className={styles.wrapper}
         ref={drapAreaRef}
-        style={{ width: COLUMN * (WIDTH + IMAGE_PADDING) + IMAGE_PADDING }}
-      >
+        style={{ width: COLUMN * (WIDTH + IMAGE_PADDING) + IMAGE_PADDING }}>
         <ul className={styles.list} style={{ height: listHeight }}>
           {sortedList.map((item, index) => {
             // 为了设置定位
@@ -78,8 +77,7 @@ function App() {
                   padding: `0 ${IMAGE_PADDING}px`
                 }}
                 data-id={item.id}
-                onDragStart={e => handleDragStart(e, item)}
-              >
+                onDragStart={(e) => handleDragStart(e, item)}>
                 <img src={item.image} alt={item.name} width={WIDTH} />
               </li>
             )

@@ -24,7 +24,7 @@ import Home from '@/view/home'
 // 引入方法三
 const AsyncDetail = lazy(
   async () =>
-    new Promise<any>(resolve => {
+    new Promise<any>((resolve) => {
       setTimeout(() => {
         resolve({
           default: Detail
