@@ -24,7 +24,9 @@ const CardsPage: React.FC = () => (
       </Link>
     </Card.Grid>
     <Card.Grid style={gridStyle} className='css-border'>
-      Content
+      <Link className='block w-full' to='/css/parallax-scrolling'>
+        parallax-scrolling
+      </Link>
     </Card.Grid>
     <Card.Grid style={gridStyle} className='css-border'>
       Content

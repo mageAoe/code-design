@@ -13,6 +13,8 @@ import CssPage from '@/view/css/index'
 import CardsPage from '@/view/css/cards'
 import MenuRadius from '@/view/css/menu-radius/index'
 import TransitionEffect from '@/view/css/transition-effect/index'
+import ParallaxScrolling from '@/view/css/parallax-scrolling/index'
+
 import HtmlPage from '@/view/html/index'
 import HtmlCardsPage from '@/view/html/cards'
 
@@ -42,6 +44,7 @@ const App: React.FC = () => (
               <Route index element={<CardsPage />}></Route>
               <Route path='/css/menu-radius' element={<MenuRadius />}></Route>
               <Route path='/css/transition-effect' element={<TransitionEffect />}></Route>
+              <Route path='/css/parallax-scrolling' element={<ParallaxScrolling />}></Route>
             </Route>
             <Route path='/components' element={<Components />}></Route>
           </Route>
