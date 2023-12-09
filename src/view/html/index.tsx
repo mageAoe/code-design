@@ -1,9 +1,6 @@
-function HtmlPage() {
-  return (
-    <div className='p-6' style={{ minHeight: 360, background: '#fff' }}>
-      HtmlPage .
-    </div>
-  )
-}
+import React from 'react'
+import { Outlet } from 'react-router-dom'
+
+const HtmlPage: React.FC = () => <Outlet></Outlet>
 
 export default HtmlPage

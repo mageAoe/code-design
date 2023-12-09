@@ -1,7 +1,6 @@
-// 组合 menu main header footer
 import React, { useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
-import { Breadcrumb, Layout, Menu, theme } from 'antd'
+import { Layout, theme } from 'antd'
 import LogoPage from './logo/index'
 import MenuPageWidget from './menu/index'
 import { CSSTransition, TransitionGroup, SwitchTransition } from 'react-transition-group'
@@ -10,7 +9,7 @@ import 'animate.css'
 
 const { Header, Content, Footer, Sider } = Layout
 
-function Home() {
+const Home: React.FC = () => {
   const location = useLocation()
   const [collapsed, setCollapsed] = useState(false)
   const {

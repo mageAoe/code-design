@@ -1,7 +1,6 @@
+import React from 'react'
 import { Outlet } from 'react-router-dom'
 
-function CssPage() {
-  return <Outlet></Outlet>
-}
+const CssPage: React.FC = () => <Outlet></Outlet>
 
 export default CssPage

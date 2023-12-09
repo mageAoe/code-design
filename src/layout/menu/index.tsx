@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { DesktopOutlined, PieChartOutlined, BlockOutlined, MacCommandOutlined } from '@ant-design/icons'
 
-function MenuPageWidget() {
+const MenuPageWidget: React.FC = () => {
   const navigate = useNavigate()
 
   function getItem(label: React.ReactNode, key: React.Key, icon?: React.ReactNode, children?: MenuItem[]): MenuItem {

@@ -4,7 +4,7 @@ import HomeC from '../pages/home'
 import Detail from '../pages/detail'
 import Record from '../pages/record'
 import Test from '@/pages/test'
-import Loading from '@/pages/loading'
+import Loading from '@/components/loading/loading'
 import Main from '@/layout/index'
 import Home from '@/view/home'
 
