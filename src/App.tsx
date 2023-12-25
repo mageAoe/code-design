@@ -7,7 +7,6 @@ import { ConfigProvider, theme } from 'antd'
 import { Routes, Route } from 'react-router-dom'
 import Main from '@/layout/index'
 const Home = lazy(() => import('@/view/home'))
-import JsPageWidget from '@/view/js/index'
 
 import CssPage from '@/view/css/index'
 import CardsPage from '@/view/css/cards'
@@ -17,6 +16,10 @@ import ParallaxScrolling from '@/view/css/parallax-scrolling/index'
 
 import HtmlPage from '@/view/html/index'
 import HtmlCardsPage from '@/view/html/cards'
+
+import JsPageWidget from '@/view/js/index'
+import JsCardsPage from '@/view/js/cards'
+import ParallaxMove from '@/view/js/parallax-move/index'
 
 const Components = lazy(() => import('@/view/components'))
 
@@ -39,7 +42,10 @@ const App: React.FC = () => (
             <Route path='/html' element={<HtmlPage />}>
               <Route index element={<HtmlCardsPage />}></Route>
             </Route>
-            <Route path='/js' element={<JsPageWidget />}></Route>
+            <Route path='/js' element={<JsPageWidget />}>
+              <Route index element={<JsCardsPage />}></Route>
+              <Route path='/js/parallax-move' element={<ParallaxMove />}></Route>
+            </Route>
             <Route path='/css' element={<CssPage />}>
               <Route index element={<CardsPage />}></Route>
               <Route path='/css/menu-radius' element={<MenuRadius />}></Route>

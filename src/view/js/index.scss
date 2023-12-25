@@ -1,0 +1,58 @@
+.cards {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  color: rgb(255 255 255 / 85%);
+  background: #141414;
+  border: 1px solid #303030;
+  border-radius: 8px;
+
+  .card-title {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 5;
+    justify-content: center;
+    min-height: 56px;
+    padding: 0 24px;
+    margin-bottom: -1px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(255 255 255 / 85%);
+    background: transparent;
+    border-bottom: 1px solid #303030;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .card {
+    padding: 24px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 1px 0 0 0 #303030, 0 1px 0 0 #303030, 1px 1px 0 0 #303030, 1px 0 0 0 #303030 inset,
+      0 1px 0 0 #303030 inset;
+    transition: box-shadow 0.3s ease-in-out 0s;
+  }
+
+  .card:hover {
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    box-shadow: 0 0 10px 5px rgb(31 178 204 / 80%) !important; /* 发光效果的 box-shadow */
+  }
+}
+
+.css-border {
+  /* 其他样式属性 */
+  transition: box-shadow 0.3s ease-in-out; /* 添加过渡效果 */
+}
+
+/* 悬停状态样式 */
+
+.css-border:hover {
+  box-shadow: 0 0 10px 5px rgb(204 31 118 / 80%) !important; /* 发光效果的 box-shadow */
+}

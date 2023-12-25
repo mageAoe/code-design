@@ -1,9 +1,6 @@
-function JsPageWidget() {
-  return (
-    <div className='p-6' style={{ minHeight: 360, background: '#fff' }}>
-      JsPageWidget .
-    </div>
-  )
-}
+import React from 'react'
+import { Outlet } from 'react-router-dom'
+
+const JsPageWidget: React.FC = () => <Outlet></Outlet>
 
 export default JsPageWidget

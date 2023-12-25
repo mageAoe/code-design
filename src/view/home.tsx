@@ -240,7 +240,13 @@ function Home() {
     setJavascriptCode(newValue)
   }, 2000)
 
-  return <CodePen htmlCode={htmlCode} cssCode={cssCode} javascriptCode={javascriptCode} />
+  // return <CodePen htmlCode={htmlCode} cssCode={cssCode} javascriptCode={javascriptCode} />
+  return (
+    <div className='color-white'>
+      <div>123</div>
+      <div>456</div>
+    </div>
+  )
 }
 
 export default Home
